@@ -1,4 +1,4 @@
-package com.karakaraoke.webCrawler.config;
+package com.karakaraoke.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
