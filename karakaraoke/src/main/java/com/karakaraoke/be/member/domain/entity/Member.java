@@ -1,4 +1,4 @@
-package com.karakaraoke.member.domain.entity;
+package com.karakaraoke.be.member.domain.entity;
 
 
 import jakarta.persistence.*;

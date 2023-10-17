@@ -13,14 +13,16 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(Customizer.withDefaults())
-                .authorizeHttpRequests(authorize -> authorize
-                        .anyRequest().authenticated()
-                )
-                .httpBasic(Customizer.withDefaults())
-                .formLogin(Customizer.withDefaults());
 
+        http.formLogin(login -> login.loginPage("/members/login")
+                .loginProcessingUrl("/login-process")
+                .usernameParameter("loginId")
+                .passwordParameter("password")
+                .defaultSuccessUrl("/", true)
+                .permitAll());
+
+        http.csrf(csrf -> csrf.disable());
+        http.authorizeHttpRequests(request -> request.anyRequest().permitAll());
         return http.build();
     }
 

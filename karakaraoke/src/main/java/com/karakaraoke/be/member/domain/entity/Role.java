@@ -1,4 +1,4 @@
-package com.karakaraoke.member.domain.entity;
+package com.karakaraoke.be.member.domain.entity;
 
 
 import jakarta.persistence.*;
@@ -15,9 +15,7 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long roleId;
 
-
     @Column(name = "role_name")
     private String roleName;
-
 
 }
